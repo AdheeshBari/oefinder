@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <style>
+      * {
+        font-size: 30px;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      }
+      body {
+        background-color: lightblue;
+      }
+      h1 {
+        background-color: white;
+        color: black;
+        width: 50%;
+        border-radius: 30px;
+      }
+    </style>
+    <script>
+      function find() {
+        event.preventDefault();
+        let num = document.getElementById("num");
+        let ans = document.getElementById("ans");
+
+        if (num.value == null) {
+          alert("Please enter a number");
+          ans.innerHTML = "";
+          num.focus();
+          return;
+        }
+
+        let n = parseInt(num.value);
+        let msg = "";
+        if (n % 2 == 0) {
+          msg = "Even";
+        } else if (n % 2 == 1) {
+          msg = "Odd";
+        }
+        ans.innerHTML = msg;
+      }
+    </script>
+  </head>
+  <body>
+    <center>
+      <h1>Even Odd Finder</h1>
+      <form onsubmit="find()">
+        <input type="number" placeholder="enter an integer" id="num" />
+        <br /><br />
+        <input type="submit" value="Find" />
+        <h2 id="ans" >
+      </form>
+    </center>
+  </body>
+</html>
